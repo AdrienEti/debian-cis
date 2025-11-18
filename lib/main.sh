@@ -155,7 +155,10 @@ audit)
     check_config
     info "Performing audit"
     audit # Perform audit
+    info "Applying Hardening"
+    apply # Perform hardening
     ;;
+
 disabled | false)
     info "$SCRIPT_NAME is disabled, ignoring"
     ACTIONS_DONE=1
