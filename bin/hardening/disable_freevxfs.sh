@@ -55,6 +55,8 @@ apply() {
         # In an unprivileged container, the kernel modules are host dependent, so you should consider enforcing it
         ok "Container detected, consider host enforcing!"
     else
+        echo "KERNEL_OPTION: ${KERNEL_OPTION}"
+        echo "LOADED_MODULE_NAME: ${LOADED_MODULE_NAME}"
         is_kernel_module_loaded "$KERNEL_OPTION" "$LOADED_MODULE_NAME"
         if [ "$FNRET" -eq 0 ]; then # 0 means true in bash, so it IS activated
             crit "$LOADED_MODULE_NAME is loaded!"
