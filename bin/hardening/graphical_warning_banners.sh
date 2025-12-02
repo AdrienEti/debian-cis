@@ -19,12 +19,12 @@ DESCRIPTION="Set graphical warning banner."
 
 # This function will be called if the script status is on enabled / audit mode
 audit() {
-    info "Not implemented yet"
+    warn "Not implemented yet"
 }
 
 # This function will be called if the script status is on enabled mode
 apply() {
-    info "Not implemented yet"
+    warn "Not implemented yet"
 }
 
 # This function will check config parameters required
