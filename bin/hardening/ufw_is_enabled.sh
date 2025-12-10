@@ -56,7 +56,7 @@ apply() {
         # connections (eg ssh). ufw does support adding rules before enabling the firewall.
         if [ "$CREATE_SSH_RULE" -eq 0 ]; then
             info "we are going to modify ufw rules to ensure ssh stays allowed"
-            ufw "$SSH_RULE"
+            ufw ${SSH_RULE}
         fi
         manage_service start "$SERVICE"
     fi
