@@ -30,7 +30,7 @@ audit() {
         crit "loopback is not configured for nftables"
     fi
 
-    if nft list ruleset 2>/dev/null | awk '/hook input/,/}/' | grep "ip saddr 127.0.0.1.*drop"; then
+    if nft list ruleset 2>/dev/null | awk '/hook input/,/}/' | grep "ip saddr 127.0.0.0.*drop"; then
         NFTABLES_LOOPBACK_DROP=0
         ok "nftables input loopack traffic is dropped"
     else
