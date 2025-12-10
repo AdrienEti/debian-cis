@@ -74,13 +74,13 @@ apply() {
 
     if [ "$UFW_LOOPBACK_DENY" -ne 0 ]; then
         info "adding ufw rule to drop traffic from 127.0.0.0/8"
-        ufw ufw deny in from 127.0.0.0/8
+        ufw deny in from 127.0.0.0/8
     fi
 
     is_ipv6_enabled
     if [ "$FNRET" -eq 0 ] && [ "$UFW_LOOPBACK_DENY_IPV6" -ne 0 ]; then
         info "adding ufw rule to drop traffic from ::1"
-        ufw ufw deny in from ::1
+        ufw deny in from ::1
     fi
 
 }
