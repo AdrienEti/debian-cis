@@ -57,7 +57,7 @@ apply() {
 
     if [ "$NFTABLES_LOOPBACK_DROP" -ne 0 ]; then
         info "adding nftables loopback drop configuration"
-        nft create rule inet filter input ip saddr 127.0.0.0/8 counter drop
+        nft add rule inet filter input ip saddr 127.0.0.0/8 counter drop
     fi
 
     is_ipv6_enabled
